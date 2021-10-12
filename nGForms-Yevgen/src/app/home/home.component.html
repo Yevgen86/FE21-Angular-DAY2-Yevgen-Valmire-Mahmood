@@ -3,56 +3,47 @@
 
         <h1 class="pt-lg-5">Welcome to preWork Angular Day 2</h1>  
 
-        <!-- <div class="container" [class.active]="clickCounter > 4">
-            <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
-                <p>The clickCounter is <b>GREATER</b> than 4.</p>
-            </ng-template>
-
-            <ng-template #none>
-                <p>The clickCounter is <b>NOT GREATER</b> than 4.</p>
-            </ng-template>
-        </div>-->
-
-        <div class="container">
-            <div *ngFor="let car of cars">
-                <ul class="list-group">
-                    <li class="list-group-item active" aria-current="true">Model Name: {{ car.model }}</li>
-                    <li class="list-group-item">Year of production: {{ car.year }}</li>
-                    <li class="list-group-item">Year of Production:{{ car.power }}</li>
-                    <li class="list-group-item">Price {{ car.price }} €</li>
-                  </ul>
+    <!-- We want that when we click a button that the form will be submitted and we those values to be taken from the inputs and to be printed in the homeComponent. For this, we will add a button in the html and the function onSubmit() in our homeComponent.ts: -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div *ngFor="let car of cars">
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true">Model Name: {{car.model}}</li>
+                        <li class="list-group-item">Year of production: {{car.year}}</li>
+                        <li class="list-group-item">Year of Production:{{car.power}}</li>
+                        <li class="list-group-item">Price {{car.price}} €</li>
+                    </ul>
+                </div>
             </div>
-        </div> 
-
-        
-        
-        <!-- We want that when we click a button that the form will be submitted and we those values to be taken from the inputs and to be printed in the homeComponent. For this, we will add a button in the html and the function onSubmit() in our homeComponent.ts: -->
-         <div class="container">
-            <h3>Add new car</h3>
-            <form [formGroup]="newCarInfo" (ngSubmit)="onSubmit()">
-                <label class="mx-2">
-                    Model Name:
-                    <input type="text" formControlName="modelName" class="form-control">
-                </label>
-                
-                <label class="mx-2">
-                    Year of Production:
-                    <input type="text" formControlName="yearOfProduction" class="form-control">
-                </label>
-                
-                <label class="mx-2">
-                    HPower:
-                    <input type="text" formControlName="carPower" class="form-control">
-                </label>
-                
-                <label class="mx-2">
-                    Price:
-                    <input type="text" formControlName="carPrice" class="form-control">
-                </label>
-                <br>
-                <input type="submit" class="btn btn-primary btn-lg my-4">
-            </form>
-        </div>
+            <div class="col-12 col-md-6">
+                    <h3>Add new car</h3>
+                    <form [formGroup]="newCarInfo" (ngSubmit)="onSubmit()">
+                        <label class="mx-2">
+                            Model Name:
+                            <input type="text" formControlName="model" class="form-control" required>
+                        </label>
+                        
+                        <label class="mx-2">
+                            Year of Production:
+                            <input type="number" formControlName="year" class="form-control" required>
+                        </label>
+                        
+                        <label class="mx-2">
+                            HPower:
+                            <input type="number" formControlName="power" class="form-control" required>
+                        </label>
+                        
+                        <label class="mx-2">
+                            Price:
+                            <input type="number" formControlName="price" class="form-control" required>
+                        </label>
+                        <br>
+                        <input type="submit" class="btn btn-primary btn-lg my-4">
+                    </form>
+                </div>
+            </div>
+        </div>  
     </div>
 </div>
 

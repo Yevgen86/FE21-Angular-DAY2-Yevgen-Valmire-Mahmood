@@ -7,6 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
   // Creating an Array of Objects which contain Cars
@@ -39,10 +40,10 @@ export class HomeComponent implements OnInit {
 
    //The FormGroup is nothing but the collection or a group of FormControls.
    newCarInfo = new FormGroup({
-    modelName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    yearOfProduction: new FormControl('', Validators.required),
-    carPower: new FormControl('', Validators.required),
-    carPrice:new FormControl('', Validators.required)
+    model: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    year: new FormControl('', Validators.required),
+    power: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required)
   });
 
   
@@ -56,13 +57,12 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
     // to take the values from the form you can select the property that have the formGroup and then just add .value
-    /* if(this.newCarInfo.valid) {
-        var a = this.newCarInfo.value;
-        a.push(this.cars);
+      if(this.newCarInfo.valid) {
+        this.cars.push(this.newCarInfo.value);
       } else {
-        alert("Some input is corrupt");
-      }*/
+        alert("Some input is incorrect");
+      }
 
-      console.log(this.newCarInfo.value);
+      console.table(this.cars);
     } 
 }
