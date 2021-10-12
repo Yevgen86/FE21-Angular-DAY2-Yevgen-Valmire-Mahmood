@@ -7,13 +7,12 @@
     <div class="row">
         <div class="col-12 col-md-8">
             <div class="row">
-                <div *ngFor="let car of cars">
-                        
+                <div class="col-md-6" *ngFor="let car of cars">
                     <ul class="list-group w-75 my-3">
-                        <li class="list-group-item list-group-item-action" aria-current="true">Model Name: {{car.model}}</li>
-                        <li class="list-group-item list-group-item-action">Year of production: {{car.year}}</li>
-                        <li class="list-group-item list-group-item-action">Year of Production: {{car.power}}</li>
-                        <li class="list-group-item list-group-item-action">Price: {{car.price}} €</li>
+                        <li class="list-group-item">Model: {{car.model}}</li>
+                        <li class="list-group-item border-0">Production year : {{car.year}}</li>
+                        <li class="list-group-item border-0">Power: {{car.power}} ps</li>
+                        <li class="list-group-item border-0">Price: {{car.price}} €</li>
                     </ul>
                 </div>
             </div>
