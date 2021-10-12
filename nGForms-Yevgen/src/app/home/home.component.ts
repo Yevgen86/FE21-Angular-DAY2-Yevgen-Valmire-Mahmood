@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
@@ -46,23 +45,17 @@ export class HomeComponent implements OnInit {
     price: new FormControl('', Validators.required)
   });
 
-  
-  
   constructor() { }
   
   ngOnInit(): void {
 
   }
 
-
   onSubmit(){
     // to take the values from the form you can select the property that have the formGroup and then just add .value
       if(this.newCarInfo.valid) {
         this.cars.push(this.newCarInfo.value);
-      } else {
-        alert("Some input is incorrect");
+        this.newCarInfo.reset()
       }
-
-      console.table(this.cars);
     } 
 }

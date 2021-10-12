@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
 
   countDonationOnClick() {
     
-    this.clickCounter++;
+    this.clickCounter += 10;
     this.donationAmount = this.clickCounter*10;
 
     if(this.donationAmount >= 200) {
@@ -26,5 +26,4 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
