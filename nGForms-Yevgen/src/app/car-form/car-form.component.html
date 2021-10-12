@@ -1,0 +1,81 @@
+<div class="container">
+    <button class="btn btn-primary" (click)="submitted=false; carForm.reset()">new Car</button>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6">
+            <div [hidden]="submitted" class="w-75 bg-dark p-2 ">
+                <h1>Car Form</h1>
+                <form #carForm="ngForm" (ngSubmit)="onSubmit(carForm)">
+
+                    <div class="form-group">
+                        <label for="modelName">Model Name</label>
+                        <input type="text" class="form-control" id="modelName" name="modelName" placeholder="Bentley GT 500" ngModel required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" class="form-control" id="year" name="year" placeholder="2021" ngModel required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="power">Power</label>
+                        <input type="number" class="form-control" id="power" name="power" placeholder="150 PS" ngModel required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fuel">Fuel Type</label>
+                        <select class="form-control"  id="fuel" name="fuel" ngModel required>
+                            <option value="" disabled selected>Select Fuel type</option>    
+                            <option *ngFor="let ftype of fuel" [value]="ftype">{{ftype}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price"
+                            name="price" placeholder="11000 €" ngModel required>
+                    </div>
+            
+                    <button type="submit" class="btn btn-primary mt-3" [disabled]="!carForm.form.valid">Submit</button>
+                </form>
+                <div [hidden]="!carForm.form.valid">
+                    <p class="text-info">New Car created successfully!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-6">
+            <div class="card mt-2" style="width: 10rem;" *ngFor="let car of cars">
+                <div class="card-body">
+                  <h5 class="card-title">{{ car.modelName }}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Production year  {{ car.year }}</li>
+                  <li class="list-group-item">Power {{ car.power }} PS</li>
+                  <li class="list-group-item">Fuel type: {{ car.fuel}}</li>
+                  <li class="list-group-item">Price: {{ car.price}}</li>
+                </ul>
+              </div>
+
+
+            <!-- <div [hidden]="!submitted" *ngFor="let car of cars">
+                <h2>You submitted the following:</h2>
+                <div class="row">
+                    <div class="col-xs-3">Model:</div>
+                    <div class="col-xs-9">{{ car.modelName }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">Year</div>
+                    <div class="col-xs-9">{{ car.year }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">Power</div>
+                    <div class="col-xs-9">{{ car.power }}</div>
+                </div>
+                <br>
+                <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+            </div> -->
+
+        </div>
+    </div>
+</div>

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-   //The FormGroup is nothing but the collection or a group of FormControls.
+   // The FormGroup is nothing but the collection or a group of FormControls.
    newCarInfo = new FormGroup({
     model: new FormControl('', [Validators.required, Validators.minLength(2)]),
     year: new FormControl('', Validators.required),
