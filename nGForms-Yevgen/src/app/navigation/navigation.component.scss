@@ -1,0 +1,35 @@
+.header-nav {
+    
+    background-color: #033959;
+
+    .navbar-brand {
+        font-size: 2em;
+        font-family: 'Pacifico', cursive;
+
+        .bi-alt {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+
+    .navbar-nav {
+        gap: 3em;
+        padding-top: 3em;
+        margin-left: 25%;
+
+        .nav-item {
+            &:hover{
+                background-color: #DB383C;
+            }
+        }
+
+        .nav-link {
+            font-weight: bold;
+            color: #fff;
+        }
+        .active {
+            background-color: #DB383C;
+
+        }
+    }
+}

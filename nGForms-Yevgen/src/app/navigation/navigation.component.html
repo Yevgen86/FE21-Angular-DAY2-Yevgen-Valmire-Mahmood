@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg header-nav navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">
+        <i class="bi bi-alt"></i>
+        FancyCars
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav align-center">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-success text-white btn-lg" (click)="countDonationOnClick()">Donate 10€</button>
+          </li>
+          <li>
+            {{ clickCounter }}
+          </li>
+        </ul>
+      </div>
+ 
+      
+    </div>
+  </nav>
+
