@@ -1,6 +1,7 @@
 .header-nav {
     
     background-color: #033959;
+    position: relative;
 
     .navbar-brand {
         font-size: 2em;
@@ -23,13 +24,31 @@
             }
         }
 
+        .donation-nav-item {
+            &:hover {
+                background-color: unset!important;
+            }
+        }
+
         .nav-link {
             font-weight: bold;
             color: #fff;
         }
-        .active {
-            background-color: #DB383C;
+    }
 
-        }
+    .active {
+        background-color: #DB383C;
+    }
+
+    .vip-message {
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 30%;
+        color: yellow;
+        font-size: 1.5em;
+        // border: 5px dashed #DB383C;
+        padding: 0.2em 4.5em;
     }
 }

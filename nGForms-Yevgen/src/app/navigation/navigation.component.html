@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg header-nav navbar-dark">
     <div class="container">
+    <span class="vip-message" [class.active]="donationAmount >= 200"> {{ vipMessage }} </span>
+
       <a class="navbar-brand" routerLink="/">
         <i class="bi bi-alt"></i>
         FancyCars
@@ -22,16 +24,15 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="#">Contacts</a>
           </li>
-          <li class="nav-item">
-            <button type="button" class="btn btn-success text-white btn-lg" (click)="countDonationOnClick()">Donate 10€</button>
+          <li class="nav-item donation-nav-item">
+            <button type="button" class="btn btn-success text-white" (click)="countDonationOnClick()">Donate 10€</button>
+            <div class="text-center text-white"></div>
           </li>
-          <li>
-            {{ clickCounter }}
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#">Donation: <b>{{donationAmount}}</b> €</a>
           </li>
         </ul>
       </div>
- 
-      
     </div>
   </nav>
 
